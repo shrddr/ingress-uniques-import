@@ -1,0 +1,16 @@
+cc = 0; vc = 0;
+$.each(window.portals, function(i, p) {
+    clist.forEach(function(c) {
+        if (p.options.data.lngE6 === c[0] && p.options.data.latE6 === c[1]) {
+            plugin.uniques.setPortalCaptured(i);
+            cc++;
+        }
+    });
+    vlist.forEach(function(c) {
+        if (p.options.data.lngE6 === c[0] && p.options.data.latE6 === c[1]) {
+            plugin.uniques.setPortalVisited(i);
+            vc++;
+        }
+    });
+});
+console.log('captured:', cc, 'visited:', vc)
